@@ -19,7 +19,7 @@ int main()
 		if (pid) {
 			// Inject our DLL into that PID
 			HMODULE library = bi.Inject(pid, path);
-			printf("library handle: %d\r\n", library);
+			printf("library handle: %#010x\r\n", library);
 			if (!library) { // if library != 0 then our code is now being run in notepad.exe's process!
 				printf("injection failed\r\n");
 			}
@@ -28,4 +28,3 @@ int main()
 
     return 0;
 }
-
